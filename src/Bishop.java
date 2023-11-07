@@ -37,7 +37,8 @@ public class Bishop extends ChessPiece {
                 int fromColumn = Math.min(column, toColumn);
                 int toCol = Math.max(column, toColumn);
                 for (int i = 1; i < toCol - fromColumn; i++) {
-                    if (chessBoard.board[fromLine - i][fromColumn + i] != null && chessBoard.board[fromLine - i][fromColumn + i].color.equals(this.color) && fromLine - i == toLine) {
+//                    System.out.println(chessBoard.board[fromLine - i][fromColumn + i]);
+                    if (chessBoard.board[fromLine - i][fromColumn + i] != null || chessBoard.board[fromLine - i][fromColumn + i].color.equals(this.color) && fromLine - i == toLine) {
                         return false;
                     }
                 }
@@ -47,7 +48,8 @@ public class Bishop extends ChessPiece {
                 int fromColumn = Math.min(column, toColumn);
                 int toC = Math.max(column, toColumn);
                 for (int i = 1; i < toC - fromColumn; i++) {
-                    if (chessBoard.board[fromLine + i][fromColumn + i] != null && chessBoard.board[fromLine + i][fromColumn + i].color.equals(this.color) && fromLine + i == toLine) {
+                    System.out.println(chessBoard.board[fromLine - i][fromColumn + i]);
+                    if (chessBoard.board[fromLine + i][fromColumn + i] != null || chessBoard.board[fromLine + i][fromColumn + i].color.equals(this.color) && fromLine + i == toLine) {
                         return false;
                     }
                 }

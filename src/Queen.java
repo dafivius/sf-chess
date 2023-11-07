@@ -34,7 +34,7 @@ public class Queen extends ChessPiece {
                 int fromCol = Math.min(column, toColumn);
                 int toCol = Math.max(column, toColumn);
                 for (int i = 1; i < toCol - fromCol; i++) {
-                    if (chessBoard.board[fromLine - i][fromCol + i] != null && chessBoard.board[fromLine - i][fromCol + i].color.equals(this.color) && fromLine - i == toLine) {
+                    if (chessBoard.board[fromLine - i][fromCol + i] != null || chessBoard.board[fromLine - i][fromCol + i].color.equals(this.color) && fromLine - i == toLine) {
                         return false;
                     }
                 }
@@ -44,7 +44,7 @@ public class Queen extends ChessPiece {
                 int fromCol = Math.min(column, toColumn);
                 int toCol = Math.max(column, toColumn);
                 for (int i = 1; i < toCol - fromCol; i++) {
-                    if (chessBoard.board[fromLine + i][fromCol + i] != null && chessBoard.board[fromLine + i][fromCol + i].color.equals(this.color) && fromLine + i == toLine) {
+                    if (chessBoard.board[fromLine + i][fromCol + i] != null || chessBoard.board[fromLine + i][fromCol + i].color.equals(this.color) && fromLine + i == toLine) {
                         return false;
                     }
                 }
